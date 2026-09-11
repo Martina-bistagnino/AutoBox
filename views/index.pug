@@ -2,18 +2,48 @@ extends layout
 
 block contenido
 
-  h2 Sistema de Gestión AutoBox
+  section.hero
 
-  p Sistema para administrar clientes, vehículos y turnos del taller.
+    .hero__overlay
 
-  section
-    h3 Clientes
-    p Gestión de clientes registrados.
+      p.hero__pre Bienvenido a
 
-  section
-    h3 Vehículos
-    p Gestión de vehículos del taller.
+      h1
+        span AUTO
+        strong BOX
 
-  section
-    h3 Turnos
-    p Gestión de turnos y servicios.
+      p Gestioná clientes, vehículos y turnos de forma simple, rápida y eficiente.
+
+  section.acciones
+
+    a.accion-card(href="/clientes/nuevo")
+      .accion-card__icono 👤
+      div
+        h3 Nuevo cliente
+        p Registrar cliente
+
+    a.accion-card(href="/vehiculos/nuevo")
+      .accion-card__icono 🚗
+      div
+        h3 Nuevo vehículo
+        p Registrar vehículo
+
+    a.accion-card(href="/turnos/nuevo")
+      .accion-card__icono 📅
+      div
+        h3 Nuevo turno
+        p Agendar turno
+
+  section.estadisticas
+
+    article.stat-card
+      span.stat-numero 12
+      p Clientes registrados
+
+    article.stat-card
+      span.stat-numero 18
+      p Vehículos registrados
+
+    article.stat-card
+      span.stat-numero 25
+      p Turnos este mes
