@@ -1,0 +1,35 @@
+extends layout
+
+block contenido
+
+  h2 Vehículos
+
+  p Vehículos registrados en el sistema AutoBox.
+
+  a.boton(href="/vehiculos/nuevo") Nuevo vehículo
+
+  if vehiculos.length > 0
+
+    table
+      thead
+        tr
+          th ID
+          th Patente
+          th Marca
+          th Modelo
+          th Cliente
+          th Acciones 
+
+      tbody
+        each vehiculo in vehiculos
+          tr
+            td= vehiculo.id
+            td= vehiculo.patente
+            td= vehiculo.marca
+            td= vehiculo.modelo
+            td= vehiculo.clienteId
+            td
+                a(href="/vehiculos/" + vehiculo.id) Ver Detalle
+
+  else
+    p No hay vehículos registrados.

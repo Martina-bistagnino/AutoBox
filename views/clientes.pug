@@ -1,0 +1,35 @@
+extends layout
+
+block contenido
+
+  h2 Clientes
+
+  p Clientes registrados en el sistema AutoBox.
+
+  a.boton(href="/clientes/nuevo") Nuevo cliente
+
+  if clientes.length > 0
+
+    table
+      thead
+        tr
+          th ID
+          th Nombre
+          th Apellido
+          th Teléfono
+          th Email
+          th Acciones 
+
+      tbody
+        each cliente in clientes
+          tr
+            td= cliente.id
+            td= cliente.nombre
+            td= cliente.apellido
+            td= cliente.telefono
+            td= cliente.email
+            td 
+                a(href="/clientes/" + cliente.id) Ver Detalle 
+
+  else
+    p No hay clientes registrados.

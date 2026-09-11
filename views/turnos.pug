@@ -1,0 +1,37 @@
+extends layout
+
+block contenido
+
+  h2 Turnos
+
+  p Turnos registrados en el sistema AutoBox.
+
+  a.boton(href="/turnos/nuevo") Nuevo turno 
+
+  if turnos.length > 0
+
+    table
+      thead
+        tr
+          th ID
+          th Cliente
+          th Vehículo
+          th Fecha
+          th Hora
+          th Servicio
+          th Acciones
+
+      tbody
+        each turno in turnos
+          tr
+            td= turno.id
+            td= turno.clienteId
+            td= turno.vehiculoId
+            td= turno.fecha
+            td= turno.hora
+            td= turno.servicio
+            td
+                a(href="/turnos/" + turno.id) Ver Detalle
+
+  else
+    p No hay turnos registrados.
